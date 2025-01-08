@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background: url("https://img.goodfon.com/original/1920x1080/6/62/beautiful-nebo-seascape-sand-sea-pliazh-shezlong-leto-tropic.jpg");
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
