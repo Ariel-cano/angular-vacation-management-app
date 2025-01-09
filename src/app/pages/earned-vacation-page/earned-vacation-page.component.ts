@@ -3,13 +3,12 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MasterService} from '../../service/master.service';
 import {APIResponse, EarnedLeave, Employee} from '../../model/master';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {AsyncPipe, DatePipe} from '@angular/common';
+import {AsyncPipe, DatePipe, NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-earned-vacation-page',
   standalone: true,
-  imports: [ReactiveFormsModule, AsyncPipe, DatePipe],
+  imports: [ReactiveFormsModule, AsyncPipe, DatePipe, NgForOf],
   templateUrl: './earned-vacation-page.component.html',
   styleUrl: './earned-vacation-page.component.css'
 })
@@ -37,6 +36,7 @@ export class EarnedVacationPageComponent implements OnInit {
     this.masterSrc.addEarnedLeave(formValue).subscribe((res: APIResponse)=>{
       if (res.result){
         alert("Leaves modified");
+        this.getData();
       }else{
         alert(res.message);
       }

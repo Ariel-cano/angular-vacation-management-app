@@ -1,39 +1,18 @@
 <div class="container my-4">
   <h3>Dashboard</h3>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-header">Total Employees</div>
+  <div class="card-container grid-3">
+    <div *ngFor="let card of firstContainerCards" class="card">
+      <div class="card-header">{{ card.header }}</div>
       <div class="card-body">
-        <p class="card-text" id="totalEmployees">{{totalEmployee}}</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">Total Leave</div>
-      <div class="card-body">
-        <p class="card-text" id="totalProjects">{{totalLeaves}}</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">New Leaves</div>
-      <div class="card-body">
-        <p class="card-text" id="totalNewLeaves">{{totalNewLeaves}}</p>
+        <p class="card-text">{{ card.value() }}</p>
       </div>
     </div>
   </div>
-  <div class="card-container-2">
-    <div class="card">
-      <div class="card-header">Approved Leaves</div>
+  <div class="card-container grid-2">
+    <div *ngFor="let card of secondContainerCards" class="card">
+      <div class="card-header">{{ card.header }}</div>
       <div class="card-body">
-        <p class="card-text" id="totalApprovedLeave">{{totalApprovedLeaves}}</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">Canceled Leaves</div>
-      <div class="card-body">
-        <p class="card-text" id="totalCanceledLeave">{{totalCanceledLeave}}</p>
+        <p class="card-text">{{ card.value() }}</p>
       </div>
     </div>
   </div>
