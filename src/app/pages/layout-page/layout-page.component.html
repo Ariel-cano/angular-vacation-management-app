@@ -10,10 +10,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container-fluid">
     <span class="navbar-brand">
-      <img src="https://avatars.githubusercontent.com/u/180523121?s=400&u=a61099e9a4a507c62a06708d632ec647869ddb69&v=4" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+      <img src="https://avatars.githubusercontent.com/u/180523121?s=400&u=a61099e9a4a507c62a06708d632ec647869ddb69&v=4" alt="Logo" width="30" height="30">
       Ariel-cano
     </span>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,25 +22,16 @@
           <a class="nav-link text-light" routerLink="/vacation-request">Vacation-Request</a>
         </li>
         <ng-container *ngIf="loggedUserData?.role !== 'Employee'">
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" routerLink="/dashboard">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/employee">Employee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/vacation-request">Vacation-Request</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/earned-vacation">Earned-Vacation</a>
-          </li>
+          <li class="nav-item"><a class="nav-link text-light" routerLink="/dashboard">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-light" routerLink="/employee">Employee</a></li>
+          <li class="nav-item"><a class="nav-link text-light" routerLink="/vacation-request">Vacation-Request</a></li>
+          <li class="nav-item"><a class="nav-link text-light" routerLink="/earned-vacation">Earned-Vacation</a></li>
         </ng-container>
       </ul>
-
       <ul class="navbar-nav ms-auto">
         <li class="nav-item d-flex align-items-center">
           <span class="navbar-text me-2 text-light">Welcome, {{loggedUserData.employeeName}}</span>
-          <button class="btn btn-warning btn-sm" type="button" (click)="onLogoff()">Log off</button>
+          <button class="btn btn-warning btn-sm" (click)="onLogoff()">Log off</button>
         </li>
       </ul>
     </div>
