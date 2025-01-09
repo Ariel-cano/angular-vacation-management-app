@@ -1,6 +1,6 @@
 # Angular Vacation Management App
 
-This project is built using **Angular 18** and is aimed at demonstrating my knowledge and skills as part of my job application process. The app manages employee vacation requests and integrates with an external API for backend functionality.
+The Angular Vacation Management App is a comprehensive system designed to manage employee leave requests. The app allows employees to submit vacation requests, which HR specialists can approve or deny. It includes features for both employee and HR roles, using Angular as the front-end framework and integrating with a backend API for managing employee data and leave statuses.
 
 ## Technologies Used
 
@@ -43,21 +43,13 @@ Follow these steps to run the Angular application locally:
  git clone <repository-url>
  
 2. **Navigate into the project directory**
-
- cd <project-directory>
- 
+   cd <project-directory>
 3. **Install the dependencies**
-
- npm install
-
+   npm install
 4. **Start the development server**
-
- ng serve
-
+   ng serve
 5. **Open the application in your browser**: After the server has started, open your browser and go to:
-
- http://localhost:4209
-
+   http://localhost:4209
 ## Learning and Technologies Demonstrated
 
 This project is designed to showcase my proficiency with the following technologies and concepts:
