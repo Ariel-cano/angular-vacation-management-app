@@ -39,9 +39,9 @@ For a full demonstration, please sign in with the HR admin account. You’ll hav
 Follow these steps to run the Angular application locally:
 
 1. **Clone the repository** (if you haven't already):
-   git clone <repository-url>
+   git clone https://github.com/Ariel-cano/angular-vacation-management-app.git
 2. **Navigate into the project directory**
-   cd <project-directory>
+   cd angular-vacation-management-app
 3. **Install the dependencies**
    npm install
 4. **Start the development server**
