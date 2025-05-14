@@ -3,12 +3,12 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MasterService} from '../../service/master.service';
 import {APIResponse, EarnedLeave, Employee} from '../../model/master';
 import {Observable} from 'rxjs';
-import {AsyncPipe, DatePipe, NgForOf} from '@angular/common';
+import {AsyncPipe, DatePipe, NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-earned-vacation-page',
   standalone: true,
-  imports: [ReactiveFormsModule, AsyncPipe, DatePipe, NgForOf],
+  imports: [ReactiveFormsModule, AsyncPipe, DatePipe, NgForOf, NgIf],
   templateUrl: './earned-vacation-page.component.html',
   styleUrl: './earned-vacation-page.component.css'
 })
@@ -49,6 +49,15 @@ export class EarnedVacationPageComponent implements OnInit {
   }
   ngOnInit() {
     this.getData();
+  }
+
+  deleteEarnedLeave(id:number){
+    const isDelete = confirm("Are you sure want to delete this employee?");
+    if (isDelete) {
+      this.masterSrc.deleteEarnedLeaveById(id).subscribe((res: APIResponse)=>{
+          this.getData();
+      })
+    }
   }
 
 }

@@ -71,6 +71,17 @@ export class MasterService {
     return this.http.get<Dashboard>(this.apiUrl + "getHRDashboard")
   }
 
+  deleteLeaveRequestId(id: number): Observable<APIResponse>{
+    return this.http.delete<APIResponse>(this.apiUrl + "DeleteLeaveRequestId?leaveId="+id)
+  }
+  getEarnedLeavesByEmpId(id: number): Observable<APIResponse>{
+    return this.http.get<APIResponse>(this.apiUrl + "GetEarnedLeavesByEmpId?id="+id)
+  }
+
+  deleteEarnedLeaveById(id: number): Observable<APIResponse>{
+    return this.http.delete<APIResponse>(this.apiUrl + "DeleteEarnedLeave?earnedLeaveId="+id)
+  }
+
 
 }
 

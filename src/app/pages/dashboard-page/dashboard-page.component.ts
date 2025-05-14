@@ -15,7 +15,6 @@ import {NgForOf} from '@angular/common';
 export class DashboardPageComponent implements OnInit {
   masterSrc = inject(MasterService);
 
-  // Переменные для данных
   totalEmployee: number | undefined;
   totalLeaves: number | undefined;
   totalNewLeaves: number | undefined;

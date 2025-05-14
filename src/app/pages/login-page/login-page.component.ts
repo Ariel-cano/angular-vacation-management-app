@@ -18,10 +18,10 @@ export class LoginPageComponent {
 
   constructor() {
 
-    const storedUser = localStorage.getItem("vacationUser");
-    if (storedUser) {
-      this.router.navigateByUrl('dashboard');
-    }
+    // const storedUser = localStorage.getItem("vacationUser");
+    // if (storedUser) {
+    //   this.router.navigateByUrl('dashboard');
+    // }
   }
 
   onLogin() {
