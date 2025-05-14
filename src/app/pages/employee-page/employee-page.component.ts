@@ -82,17 +82,5 @@ export class EmployeePageComponent implements OnInit {
     });
   }
 
-  onDelete1(id: number){
-    const isDelete = confirm("Are you sure want to delete this employee?");
-    if (isDelete) {
-      this.masterSrv.deleteEmp(id).subscribe((res: Employee)=>{
-        try {
-          this.loadEmployee();
-        }catch(error){
-          alert("First, delete the vacation request from this employee.");
-        }
-      })
-    }
-  }
 
 }

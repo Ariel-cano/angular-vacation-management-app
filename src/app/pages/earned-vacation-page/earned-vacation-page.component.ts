@@ -52,7 +52,7 @@ export class EarnedVacationPageComponent implements OnInit {
   }
 
   deleteEarnedLeave(id:number){
-    const isDelete = confirm("Are you sure want to delete this employee?");
+    const isDelete = confirm("Are you sure want to delete this earned leave?");
     if (isDelete) {
       this.masterSrc.deleteEarnedLeaveById(id).subscribe((res: APIResponse)=>{
           this.getData();

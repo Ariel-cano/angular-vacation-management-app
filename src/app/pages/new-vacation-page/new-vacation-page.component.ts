@@ -114,6 +114,8 @@ export class NewVacationPageComponent implements OnInit {
 
 
   deleteRequest(id: number){
+    const isDelete = confirm("Are you sure want to delete this leave request?");
+    if (!isDelete) return;
     this.masterSrc.deleteLeaveRequestId(id).subscribe((Res: APIResponse)=>{
       this.getGriData();
     })
