@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MasterService} from '../../service/master.service';
 import {APIResponse, EarnedLeave, Employee} from '../../model/master';
 import {Observable} from 'rxjs';
@@ -25,8 +25,8 @@ export class EarnedVacationPageComponent implements OnInit {
   initializeForm(){
     this.form = new FormGroup({
       earnedLeaveId: new FormControl(0),
-      employeeId: new FormControl(0),
-      totalEarnedLeaves: new FormControl(0),
+      employeeId: new FormControl(null, [Validators.required]),
+      totalEarnedLeaves: new FormControl(0, [Validators.required, Validators.min(1)]),
       lastUpdatedDate: new FormControl(new Date())
     })
   }
