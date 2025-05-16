@@ -80,7 +80,7 @@ export class NewVacationPageComponent implements OnInit {
       }
     });
   }
-  changeStatus(id: number, empId: number, startDate: string, endDate: string) {
+  changeStatusApproved(id: number, empId: number, startDate: string, endDate: string) {
     this.masterSrc.getEarnedLeavesByEmpId(empId).subscribe((res: APIResponse) => {
       if (res.result) {
         this.earnedLeaves = [];

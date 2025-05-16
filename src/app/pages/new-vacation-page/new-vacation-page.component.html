@@ -42,7 +42,7 @@
 
                 <div class="card-footer text-end">
                   <div>
-                    <button class="btn btn-success btn-sm m-1" *ngIf="masterSrc.loggedUserData?.role === 'Admin'" (click)="changeStatus(item.leaveId, item.employeeId, item.endDate, item.startDate)">Approve</button>
+                    <button class="btn btn-success btn-sm m-1" *ngIf="masterSrc.loggedUserData?.role === 'Admin'" (click)="changeStatusApproved(item.leaveId, item.employeeId, item.endDate, item.startDate)">Approve</button>
                     <button class="btn btn-danger btn-sm m-1" *ngIf="masterSrc.loggedUserData?.role === 'Admin'" (click)="deleteRequest(item.leaveId)">Delete</button>
                     <ng-container *ngIf="masterSrc.loggedUserData?.role !== 'Admin'">
 
