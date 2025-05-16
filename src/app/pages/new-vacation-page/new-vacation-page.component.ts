@@ -1,9 +1,10 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MasterService} from '../../service/master.service';
 import {APIResponse, EarnedLeave, Employee, LeaveRequest, LeaveType} from '../../model/master';
 import {Observable} from 'rxjs';
 import {AsyncPipe, DatePipe, NgIf} from '@angular/common';
+import {startBeforeEndValidator} from '../../validators/validateDate.validator';
 
 @Component({
   selector: 'app-new-vacation-page',
@@ -29,14 +30,14 @@ export class NewVacationPageComponent implements OnInit {
   initializeForm(){
     this.vacationForm = new FormGroup({
       leaveId: new FormControl(0),
-      employeeId: new FormControl(this.masterSrc.loggedUserData.employeeId),
-      leaveTypeId: new FormControl(0),
-      startDate: new FormControl(''),
-      endDate: new FormControl(''),
+      employeeId: new FormControl(this.masterSrc.loggedUserData.role == 'Employee' ? this.masterSrc.loggedUserData.employeeId : null, Validators.required),
+      leaveTypeId: new FormControl(null, Validators.required),
+      startDate: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', Validators.required),
       status: new FormControl('New'),
       reason: new FormControl(''),
-      requestDate: new FormControl(new Date()),
-    });
+      requestDate: new FormControl(new Date())
+    },{validators: startBeforeEndValidator()});
     if (this.masterSrc.loggedUserData.role == 'Employee'){
       this.vacationForm.controls['employeeId'].disable();
     }

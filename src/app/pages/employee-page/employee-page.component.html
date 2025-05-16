@@ -65,8 +65,8 @@
                        minlength="3"
                        #nameInput="ngModel">
                 <div *ngIf="nameInput.invalid && nameInput.touched">
-                  <small *ngIf="nameInput.errors?.['required']">the field must be filled in</small>
-                  <small *ngIf="nameInput.errors?.['minlength']">Min 3 symbols</small>
+                  <small *ngIf="nameInput.errors?.['required']" class="text-danger mt-1">the field must be filled in</small>
+                  <small *ngIf="nameInput.errors?.['minlength']" class="text-danger mt-1">Min 3 symbols</small>
                 </div>
               </div>
               <div class="col-md-6">
@@ -78,8 +78,8 @@
                        minlength="3"
                        #contactInput="ngModel">
                 <div *ngIf="contactInput.invalid && contactInput.touched">
-                  <small *ngIf="contactInput.errors?.['required']">the field must be filled in</small>
-                  <small *ngIf="contactInput.errors?.['minlength']">Min 3 symbols</small>
+                  <small *ngIf="contactInput.errors?.['required']" class="text-danger mt-1">the field must be filled in</small>
+                  <small *ngIf="contactInput.errors?.['minlength']" class="text-danger mt-1">Min 3 symbols</small>
                 </div>
               </div>
             </div>
@@ -94,8 +94,8 @@
                        email
                        #emailInput="ngModel">
                 <div *ngIf="emailInput.invalid && emailInput.touched">
-                  <small *ngIf="emailInput.errors?.['required']">the field must be filled in</small>
-                  <small *ngIf="emailInput.errors?.['email']">Invalid email format</small>
+                  <small *ngIf="emailInput.errors?.['required']" class="text-danger mt-1">the field must be filled in</small>
+                  <small *ngIf="emailInput.errors?.['email']" class="text-danger mt-1">Invalid email format</small>
                 </div>
               </div>
               <div class="col-md-6">
@@ -111,7 +111,7 @@
                   }
                 </select>
                 <div *ngIf="parentDept.invalid && parentDept.touched">
-                  <small *ngIf="parentDept.errors?.['required']">Please select a parent department</small>
+                  <small *ngIf="parentDept.errors?.['required']" class="text-danger mt-1">Please select a parent department</small>
                 </div>
               </div>
               <div class="col-md-6">
@@ -127,7 +127,7 @@
                   }
                 </select>
                 <div *ngIf="childDept.invalid && childDept.touched">
-                  <small *ngIf="childDept.errors?.['required']">Please select a child department</small>
+                  <small *ngIf="childDept.errors?.['required']" class="text-danger mt-1">Please select a child department</small>
                 </div>
               </div>
             </div>
@@ -142,8 +142,8 @@
                        minlength="4"
                        #passwordInput="ngModel">
                 <div *ngIf="passwordInput.invalid && passwordInput.touched">
-                  <small *ngIf="passwordInput.errors?.['required']">the field must be filled in</small>
-                  <small *ngIf="passwordInput.errors?.['minlength']">Min 4 characters</small>
+                  <small *ngIf="passwordInput.errors?.['required']" class="text-danger mt-1">the field must be filled in</small>
+                  <small *ngIf="passwordInput.errors?.['minlength']" class="text-danger mt-1">Min 4 characters</small>
                 </div>
               </div>
               <div class="col-md-6">
@@ -156,7 +156,7 @@
                   <option value="Other">Other</option>
                 </select>
                 <div *ngIf="genderInput.invalid && genderInput.touched">
-                  <small *ngIf="genderInput.errors?.['required']">Please select gender</small>
+                  <small *ngIf="genderInput.errors?.['required']" class="text-danger mt-1">Please select gender</small>
                 </div>
               </div>
             </div>

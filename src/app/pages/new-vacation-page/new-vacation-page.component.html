@@ -72,11 +72,14 @@
                 <div class="form-group">
                   <label for="employeeId">Employee ID</label>
                   <select  class="form-select"  formControlName="employeeId" name="employeeId" id="employeeId">
-                    <option value="">Select Employee</option>
+                    <option value="" disabled>Select Employee</option>
                     @for (item of employee$ | async; track $index){
                       <option [value]="item.employeeId">{{item.employeeName}}</option>
                     }
                   </select>
+                  <div *ngIf="vacationForm.get('employeeId')?.touched && vacationForm.get('employeeId')?.invalid" class="text-danger mt-1">
+                    Employee is required
+                  </div>
 
                 </div>
               </div>
@@ -84,11 +87,14 @@
                 <div class="form-group">
                   <label for="leaveTypeId">Select Leave Type </label>
                   <select class="form-select" name="leaveTypeId" id="leaveTypeId" formControlName="leaveTypeId">
-                    <option value="">Select Leave Type</option>
+                    <option value="" disabled>Select Leave Type</option>
                     @for(item of leaveTypeList(); track $index){
                       <option [value]="item.leaveTypeId">{{item.typeName}}</option>
                     }
                   </select>
+                  <div *ngIf="vacationForm.get('leaveTypeId')?.touched && vacationForm.get('leaveTypeId')?.invalid" class="text-danger mt-1">
+                    Leave type is required
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,13 +105,22 @@
                   <label for="startDate">Start Date</label>
                   <input type="date" formControlName="startDate" class="form-control" id="startDate">
                 </div>
+                <div *ngIf="vacationForm.get('startDate')?.touched && vacationForm.get('startDate')?.invalid" class="text-danger mt-1">
+                  start Date is required
+                </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="endDate">End Date</label>
                   <input type="date" formControlName="endDate" class="form-control" id="endDate">
                 </div>
+                <div *ngIf="vacationForm.get('endDate')?.touched && vacationForm.get('endDate')?.invalid" class="text-danger mt-1">
+                  end Date is required
+                </div>
               </div>
+            </div>
+            <div *ngIf="vacationForm.errors?.['startAfterEnd'] && (vacationForm.get('endDate')?.touched || vacationForm.get('startDate')?.touched)" class="text-danger mt-1">
+              End date must be after start date.
             </div>
             <div class="row">
               <div class="col-md-12">
@@ -116,7 +131,7 @@
               </div>
             </div>
 
-            <button type="button" (click)="onSave()"  class="btn btn-primary mt-2">Submit</button>
+            <button type="button" (click)="onSave()" [disabled]="vacationForm.invalid"  class="btn btn-primary mt-2">Submit</button>
           </form>
         </div>
       </div>
